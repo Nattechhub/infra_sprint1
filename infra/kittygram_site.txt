@@ -1,0 +1,5 @@
+IP: 158.160.6.91 ;
+name_taski: https://mytaskiproject.hopto.org/ ;
+name_kittygram: https://mykittigramproject.hopto.org ;
+login: admin ;
+password: admin ; 
