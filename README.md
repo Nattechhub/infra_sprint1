@@ -11,7 +11,7 @@
 - gunicorn
 
 ## Установка
-### Склоинровать репозиторий
+### Склонировать репозиторий
 ```
 git clone git@github.com:PARTYNEXTDOORS/infra_sprint1.git
 ```
