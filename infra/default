@@ -15,24 +15,24 @@
         try_files $uri /index.html;
     }
 
-    listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/mytaskiproject.hopto.org/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/mytaskiproject.hopto.org/privkey.pem; # managed by Certbot
-    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
-    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+    listen 443 ssl;
+    ssl_certificate /etc/letsencrypt/live/mytaskiproject.hopto.org/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/mytaskiproject.hopto.org/privkey.pem;
+    include /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
 
 }
 
  server {
     if ($host = mytaskiproject.hopto.org) {
         return 301 https://$host$request_uri;
-    } # managed by Certbot
+    }
 
 
 
     listen 80;
     server_name 158.160.6.91 mytaskiproject.hopto.org;
-    return 404; # managed by Certbot
+    return 404;
 
 
 }
@@ -42,10 +42,12 @@
     server_name mykittigramproject.hopto.org;
     location /api/ {
         proxy_pass http://127.0.0.1:8080;
+        client_max_body_size 20M;
     }
 
     location /admin/ {
         proxy_pass http://127.0.0.1:8080;
+        client_max_body_size 20M;
     }
 
     location /media/ {
@@ -58,11 +60,11 @@
         try_files $uri /index.html;
     }
 
-    listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/mykittigramproject.hopto.org/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/mykittigramproject.hopto.org/privkey.pem; # managed by Certbot
-    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
-    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+    listen 443 ssl;
+    ssl_certificate /etc/letsencrypt/live/mykittigramproject.hopto.org/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/mykittigramproject.hopto.org/privkey.pem;
+    include /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
 
 }
 
@@ -71,12 +73,12 @@
  server {
     if ($host = mykittigramproject.hopto.org) {
         return 301 https://$host$request_uri;
-    } # managed by Certbot
+    }
 
 
     listen 80;
     server_name mykittigramproject.hopto.org;
-    return 404; # managed by Certbot
+    return 404;
 
 
 }
