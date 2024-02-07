@@ -13,7 +13,7 @@
 ## Установка
 ### Склонировать репозиторий
 ```
-git clone git@github.com:PARTYNEXTDOORS/infra_sprint1.git
+git clone git@github.com:Nattechhub/infra_sprint1.git
 ```
 
 ### Создать и активировать виртуальное окружение
